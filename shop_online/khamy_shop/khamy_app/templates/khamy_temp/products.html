@@ -1,0 +1,36 @@
+<!-- child template inheriting from main.html file -->
+{% extends 'khamy_temp/main.html' %}
+
+{% block content %} <!-- beginning of session for child template-->
+
+        <br>
+        <!---one column, one row and table-->
+        <div class="row">
+            <div class="col-md">
+                <div class="card card-body">
+                    <h5>Products</h5>
+                </div>
+                <div class="card card-body">
+                    <table class="table">
+                        <tr>
+                            <th>Products</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                        </tr>
+
+                        {% for i in products %}
+                            <tr>
+                                <td>{{i.name}}</td>
+                                <td>{{i.category}}</td>
+                                <td>{{i.price}}</td>
+                            </tr>
+                            
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock content %} <!-- beginning of session for child template-->
